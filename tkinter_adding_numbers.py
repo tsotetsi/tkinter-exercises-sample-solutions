@@ -6,7 +6,7 @@ root = tk.Tk()
 
 root.geometry("230x150")  # We use geometry to set the width and height of the main window
 root.title("Adding Numbers")
-root.configure(bg='blue')
+# root.configure(bg='blue')  # You can add a background color to your window.
 
 label_1 = Label(root, text="Num 1: ")
 entry_1 = Entry(root, width=20)
