@@ -1,2 +1,2 @@
 language = "python3"
-run = "python3 tkinter_adding_numbers.py"
+run = "python3 temperature_convertor.py"
