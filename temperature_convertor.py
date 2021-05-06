@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import LabelFrame, Button, Entry, END
+from tkinter import LabelFrame, Button, Entry, END, messagebox
 
 
 gui = tk.Tk()
@@ -40,6 +40,13 @@ def temperature_conversion():
         return None
 
 
+def exit_program():
+    msg_box = messagebox.askquestion("Exit Application", "Are you sure you want to exit the application", icon='warning')
+    if msg_box == "yes":
+        gui.destroy()
+    else:
+        messagebox.showinfo("Return", "You will now return to the App", icon="warning")
+
 def activate_celsius_entry():
     if celsius_entry['state'] == "normal":
         celsius_entry.config(state="disabled")
@@ -71,8 +78,7 @@ results_entry.place(x=220, y=240, height=29.5)
 clear_button = Button(gui, text="Clear", command=clear_fields)
 clear_button.place(x=340, y=240)
 
-exit_button = Button(gui, text="Exit", command=gui.destroy)
+exit_button = Button(gui, text="Exit", command=exit_program)
 exit_button.place(x=440, y=240)
-
 
 gui.mainloop()
